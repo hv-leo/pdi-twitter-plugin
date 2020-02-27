@@ -110,6 +110,12 @@ public class TwitterSearch extends BaseStep implements StepInterface {
       first = false;
 
       data.queryIdx = Arrays.binarySearch( getInputRowMeta().getFieldNames( ), meta.getSearchQueryField() );
+      if ( data.queryIdx < 0 ) {
+        logError( BaseMessages.getString( PKG, "TwitterSearch.Invalid.QueryField" ) );
+        setErrors( 1 );
+        stopAll();
+        return false;
+      }
 
       ConfigurationBuilder cb = new ConfigurationBuilder();
       cb.setDebugEnabled( true )
@@ -134,6 +140,8 @@ public class TwitterSearch extends BaseStep implements StepInterface {
       result = twitter.search( query );
     } catch ( TwitterException e ) {
       logError( BaseMessages.getString( PKG, "TwitterSearch.Search.Exception", e.getMessage() ) );
+      setErrors( 1 );
+      stopAll();
       return false;
     }
     for ( Status status : result.getTweets() ) {
