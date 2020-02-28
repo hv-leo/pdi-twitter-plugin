@@ -5,6 +5,8 @@ There are three tabs to be configured: search, authentication, and output tabs.
 ### Search Tab
 In the search tab, we must configure the query we want to perform.
 
+![alt text](https://github.com/LeonardoCoelho71950/pdi-twitter-plugin/blob/master/docs/screenshots/search-tab.png "Search Tab configuration")
+
 #### Fields
 Field  | Description
 ------------- | -------------
@@ -14,11 +16,8 @@ Language  | The language in which the tweets should be written.
 Hide Sensistive Tweets?  | Allows us to hide sensitive content. 
 Only Verified Users?  |  Allows us to ignore non-verified users.
 
-#### Example
-
-![alt text](https://github.com/LeonardoCoelho71950/pdi-twitter-plugin/blob/master/docs/screenshots/search-tab.png "Search Tab configuration")
-
 ### Authentication Tab
+In the authentication tab, we must provide our API credentials. 
 
 ![alt text](https://github.com/LeonardoCoelho71950/pdi-twitter-plugin/blob/master/docs/screenshots/auth-tab.png "Authentication Tab configuration")
 
