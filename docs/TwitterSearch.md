@@ -3,7 +3,7 @@ The twitter search step allows searching for tweets.
 There are three tabs to be configured: search, authentication, and output tabs.
 
 ### Search Tab
-In the search tab, we must configure the query we want to perform.
+In the search tab, we must configure the search we want to perform.
 
 ![alt text](https://github.com/LeonardoCoelho71950/pdi-twitter-plugin/blob/master/docs/screenshots/search-tab.png "Search Tab configuration")
 
@@ -22,7 +22,7 @@ In the authentication tab, we must provide our API credentials.
 ![alt text](https://github.com/LeonardoCoelho71950/pdi-twitter-plugin/blob/master/docs/screenshots/auth-tab.png "Authentication Tab configuration")
 
 ### Output Tab
-In the output tab, we can choose which fields our queries should produce. If a field is empty, that field won't be materialized. 
+In the output tab, we can choose which output fields our queries should produce. If a field is empty, that field won't be materialized. 
 
 ![alt text](https://github.com/LeonardoCoelho71950/pdi-twitter-plugin/blob/master/docs/screenshots/output-tab.png "Output Tab configuration")
 
