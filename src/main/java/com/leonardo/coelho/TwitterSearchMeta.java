@@ -60,7 +60,7 @@ import java.util.Map;
 public class TwitterSearchMeta extends BaseStepMeta implements StepMetaInterface {
   private static Class<?> PKG = TwitterSearch.class; // for i18n purposes, needed by Translator2!!   $NON-NLS-1$
 
-  public Map<String, String> supportedLanguages;
+  private static Map<String, String> supportedLanguages;
   private String searchQueryField;
   private ResultType resultTypeField;
   private String langField;
