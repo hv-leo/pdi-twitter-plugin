@@ -60,7 +60,63 @@ import java.util.Map;
 public class TwitterSearchMeta extends BaseStepMeta implements StepMetaInterface {
   private static Class<?> PKG = TwitterSearch.class; // for i18n purposes, needed by Translator2!!   $NON-NLS-1$
 
-  private static Map<String, String> supportedLanguages;
+  private static final Map<String, String> supportedLanguages;
+    
+  static {
+          supportedLanguages = new HashMap<String, String>()
+            {
+              {
+                put( "French", "fr" );
+                put( "English", "en" );
+                put( "Arabic", "ar" );
+                put( "Japanese", "ja" );
+                put( "Spanish", "es" );
+                put( "German", "de" );
+                put( "Italian", "it" );
+                put( "Indonesian", "id" );
+                put( "Portuguese", "pt" );
+                put( "Korean", "ko" );
+                put( "Turkish", "tr" );
+                put( "Russian", "ru" );
+                put( "Dutch", "nl" );
+                put( "Filipino", "fil" );
+                put( "Malay", "msa" );
+                put( "Traditional Chinese", "zh-tw" );
+                put( "Simplified Chinese", "zh-cn" );
+                put( "Hindi", "hi" );
+                put( "Norwegian", "no" );
+                put( "Swedish", "sv" );
+                put( "Finnish", "fi" );
+                put( "Danish", "da" );
+                put( "Polish", "pl" );
+                put( "Hungarian", "hu" );
+                put( "Persian", "fa" );
+                put( "Hebrew", "he" );
+                put( "Urdu", "ur" );
+                put( "Thai", "th" );
+                put( "Ukrainian", "uk" );
+                put( "Catalan", "ca" );
+                put( "Irish", "ga" );
+                put( "Greek", "el" );
+                put( "Basque", "eu" );
+                put( "Czech", "cs" );
+                put( "Galician", "gl" );
+                put( "Romanian", "ro" );
+                put( "Croatian", "hr" );
+                put( "British English", "en-gb" );
+                put( "Vietnamese", "vi" );
+                put( "Bangla", "bn" );
+                put( "Bulgarian", "bg" );
+                put( "Serbian", "sr" );
+                put( "Slovak", "sk" );
+                put( "Gujarati", "gu" );
+                put( "Marathi", "mr" );
+                put( "Tamil", "ta" );
+                put( "Kannada", "kn" );
+              }
+            };
+  }
+    
   private String searchQueryField;
   private ResultType resultTypeField;
   private String langField;
@@ -79,7 +135,6 @@ public class TwitterSearchMeta extends BaseStepMeta implements StepMetaInterface
 
   public TwitterSearchMeta() {
     super(); // allocate BaseStepMeta
-    buildSupportedLanguagesMap();
   }
 
   public void loadXML( Node stepnode, List<DatabaseMeta> databases, IMetaStore metaStore ) throws KettleXMLException {
@@ -332,61 +387,6 @@ public class TwitterSearchMeta extends BaseStepMeta implements StepMetaInterface
     String[] languages = supportedLanguages.keySet().toArray( new String[0] );
     Arrays.sort( languages );
     return languages;
-  }
-
-  private void buildSupportedLanguagesMap() {
-    supportedLanguages = new HashMap<String, String>()
-    {
-      {
-        put( "French", "fr" );
-        put( "English", "en" );
-        put( "Arabic", "ar" );
-        put( "Japanese", "ja" );
-        put( "Spanish", "es" );
-        put( "German", "de" );
-        put( "Italian", "it" );
-        put( "Indonesian", "id" );
-        put( "Portuguese", "pt" );
-        put( "Korean", "ko" );
-        put( "Turkish", "tr" );
-        put( "Russian", "ru" );
-        put( "Dutch", "nl" );
-        put( "Filipino", "fil" );
-        put( "Malay", "msa" );
-        put( "Traditional Chinese", "zh-tw" );
-        put( "Simplified Chinese", "zh-cn" );
-        put( "Hindi", "hi" );
-        put( "Norwegian", "no" );
-        put( "Swedish", "sv" );
-        put( "Finnish", "fi" );
-        put( "Danish", "da" );
-        put( "Polish", "pl" );
-        put( "Hungarian", "hu" );
-        put( "Persian", "fa" );
-        put( "Hebrew", "he" );
-        put( "Urdu", "ur" );
-        put( "Thai", "th" );
-        put( "Ukrainian", "uk" );
-        put( "Catalan", "ca" );
-        put( "Irish", "ga" );
-        put( "Greek", "el" );
-        put( "Basque", "eu" );
-        put( "Czech", "cs" );
-        put( "Galician", "gl" );
-        put( "Romanian", "ro" );
-        put( "Croatian", "hr" );
-        put( "British English", "en-gb" );
-        put( "Vietnamese", "vi" );
-        put( "Bangla", "bn" );
-        put( "Bulgarian", "bg" );
-        put( "Serbian", "sr" );
-        put( "Slovak", "sk" );
-        put( "Gujarati", "gu" );
-        put( "Marathi", "mr" );
-        put( "Tamil", "ta" );
-        put( "Kannada", "kn" );
-      }
-    };
   }
 
   public String getCreationDateField() {
